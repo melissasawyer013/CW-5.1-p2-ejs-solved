@@ -21,6 +21,11 @@ app.set('view engine', 'ejs');
 // STEP 7: Set up the path to static assets with express.static() method, which takes path.join() as it's argument - note that path.join() expects 2 arguments
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Step 8: In the views/pages folder, go to each of the three files to update lines 8 and 12. 
+    // Line 8 will need to be a <link> tag where the href attribute leads to the styles.css file in the public/styles folder. 
+    // In line 12, replace the placeholder that says "PATH TO CODESQUAD-LOGO.PNG FILE IN IMAGES FOLDER GOES HERE" with the correct path to the CodeSquad-logo.png file in the public/images folder. 
+    // Do this for all three files in the views/about folder. Note that you may not be able to see changes in your browser until you complete steps 9 and 10 below. 
+
 app.use(morgan('combined'));
 
 // Variables to be used in EJS files.
@@ -29,9 +34,9 @@ let date = new Date();
 let year = date.getFullYear();
 
 //Routes 
-// STEP 8: Convert these get routes so that they use the response.render method to render the correct ejs files from the views/pages folder. Pass in the userName variable and the year variable so that their values can be imported into the ejs pages being rendered. 
+// STEP 9: Convert these get routes so that they use the response.render method to render the correct ejs files from the views/pages folder. Pass in the userName variable and the year variable so that their values can be imported into the ejs pages being rendered. 
 
-// STEP 9: For each route, go to the ejs page in the views/pages folder and use userName and the year values being passed in through the route. The userName should diplay in the first paragraph, and the year should display in the footer. 
+// STEP 10: For each route, go to the ejs page in the views/pages folder and use userName and the year values being passed in through the route. The userName should diplay in the first paragraph, and the year should display in the footer. 
 app.get('/', (request, response) => {
     response.render('pages/index', {
         name: userName,
